@@ -1,0 +1,66 @@
+<form [formGroup]="createForm">
+
+    <div class="alert alert-danger" *ngIf="error">
+        <div class="alert-items">
+            <div class="alert-item static">
+                <div class="alert-icon-wrapper">
+                    <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
+                </div>
+                <span class="alert-text">
+                    Please Fill all Required Fields
+                </span>
+            </div>
+        </div>
+    </div>
+
+  <section class="form-block">
+    <div class="form-group">
+      <label for="milk">Milk In Liter</label>
+      <input id="milk" type="number" size="35" formControlName="milkInLiter">
+    </div>
+    <div class="form-group">
+      <label for="rateperLiter">Rate Per Liter</label>
+      <input id="rateperLiter" type="number" size="35" formControlName="rateperLiter">
+    </div>
+    <div class="form-group">
+      <label for="sugar">Sugar In Kg</label>
+      <input id="sugar" type="number" size="35" formControlName="sugarInKg">
+    </div>
+    <div class="form-group">
+      <label for="sugarrate">Rate Per Kg</label>
+      <input id="sugarrate" type="number" size="35" formControlName="rateperKg">
+    </div>
+    <div class="form-group">
+      <label for="cf">Coffee Powder Rate</label>
+      <input id="cf" type="number" size="35" formControlName="coffeePowderRate">
+    </div>
+    <div class="form-group">
+      <label for="tea">Tea Powder Rate</label>
+      <input id="tea" type="number" size="35" formControlName="teaPowderRate">
+    </div>
+    <div class="form-group">
+      <label for="income">Today's Income</label>
+      <input id="income" type="number" size="35" formControlName="income">
+    </div>
+    <div class="form-group">
+      <label for="income">Other Expenditure</label>
+      <input id="income" type="number" size="35" formControlName="otherCost">
+    </div>
+    <div class="form-group">
+      <label for="date1">Date</label>
+      <input type="date" id="date1" size="20" clrDate formControlName="date">
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="calculate()">Calculate</button>
+    <div class="form-group">
+      <label for="exp">Total Expense :</label>
+      <input type="number" id="exp" size="20" formControlName="totalExpense">
+    </div>
+    <div class="form-group">
+      <label for="profit">Profit :</label>
+      <input type="number" id="profit" size="20" formControlName="profit">
+    </div>
+  </section>
+  <button class="btn btn-primary" (click)="createEntry()">Update</button>
+
+</form>

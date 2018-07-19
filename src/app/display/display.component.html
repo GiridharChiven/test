@@ -1,0 +1,37 @@
+<label>Select Boxes</label>
+<div class="form-group" *ngIf="allUsers">
+    <label for="selects_1">All users</label>
+    <div class="select">
+        <select id="selects_1" [(ngModel)]="objectId" name="object" (change)="allUsers()">
+            <option *ngFor="let item of allUsers" value="{{item.date}}">{{ item.date }}</option>
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-5 col-md-8 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                Data
+            </div>
+            <div class="card-block">
+                <div class="card-text">
+                    <p *ngIf="allUsers">
+                        <span *ngFor="let user of allUsers" [hidden]="user.date!=objectDate">
+                                <label>Milk In Liter:  </label> {{ user.milkInLiter }}
+                            <br><label>Rate per Liter:  </label> {{ user.rateperLiter }}
+                            <br> <label>Sugar In Kg:  </label> {{ user.sugarInKg }}
+                            <br> <label>Rate per Kg:  </label> {{ user.rateperKg }}
+                            <br> <label>Coffee Powder Rate:  </label> {{ user.coffeePowderRate }}
+                            <br> <label>Tea Powder Rate:  </label> {{ user.teaPowderRate }}
+                            <br> <label>Other Expense:  </label> {{ user.otherCost }}
+                            <br> <label>Income: </label> {{ user.income }}
+                            <br>
+                        </span>
+                        <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
